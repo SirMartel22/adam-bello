@@ -1,69 +1,25 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/motion";
+import { caseStudies } from "@/lib/content";
+
+const testimonialPlaceholders = [
+  { name: "Verified collaborator", role: "Name and role pending", tone: "peach", copy: "A verified testimonial about Adam's program execution, reliability and contribution will appear here." },
+  { name: "Community partner", role: "Organization pending", tone: "sage", copy: "This card is reserved for a partner who can speak to Adam's ability to bring people and organizations around a shared objective." },
+  { name: "Program stakeholder", role: "Name and role pending", tone: "plum", copy: "A sourced testimonial about community activation, partnerships or on-the-ground delivery will replace this temporary copy." },
+  { name: "Ecosystem collaborator", role: "Organization pending", tone: "blue", copy: "Final social proof will be published only after the name, role, wording and permission have been verified." },
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main className="reference-home">
+    <section className="reference-hero section-shell">
+      <p className="scroll-prompt"><span /> Keep Scrolling :)</p>
+      <h1 className="reference-title"><span>ECOSYSTEM &amp; COMMUNITY OPERATOR,</span><span>PARTNERSHIPS BUILDER,</span><span>PROGRAM STRATEGIST</span></h1>
+      <div className="reference-intro"><div className="reference-copy"><p>I build the systems around communities, programs, events and partnerships that help organizations reach people, create meaningful participation and turn participation into opportunity.</p><p>My work sits at the intersection of community, partnerships, events and technology. I move between strategy and delivery—mapping ecosystems, coordinating stakeholders, troubleshooting constraints and getting the work into the real world.</p><p>How a person goes from discovering a community → finding a reason to participate → gaining useful access or skills → returning to contribute and lead, is the system I care about.</p><Link className="reference-link" href="/work">Explore selected work <ArrowUpRight /></Link></div><div className="reference-portrait"><Image src="/placeholders/portrait.svg" alt="Temporary portrait placeholder for Adam Bello" fill priority sizes="(max-width: 760px) 100vw, 60vw" /><span>Temporary portrait</span></div></div>
+    </section>
+    <section className="reference-testimonials section-shell"><div className="reference-section-title"><h2>TESTIMONIALS</h2><p>What people I&apos;ve worked<br />with say about me</p></div><div className="testimonial-lead"><p>Credibility is strongest when it comes from the people closest to the work. This section is intentionally structured now and will only publish testimonials that are verified and approved.</p></div><div className="testimonial-stack">{testimonialPlaceholders.map((item, index) => <Reveal key={item.name} className={`reference-testimonial ${item.tone} card-${index + 1}`}><div className="testimonial-person"><span className="avatar-placeholder">AB</span><div><strong>{item.name}</strong><small>{item.role}</small></div><b>“</b></div><p>{item.copy}</p></Reveal>)}</div></section>
+    <section id="work" className="reference-highlights section-shell"><div className="highlight-image"><Image src="/placeholders/event.svg" alt="Temporary event photograph placeholder" fill sizes="(max-width: 760px) 100vw, 35vw" /></div><div className="highlight-copy"><h2>HIGHLIGHTS</h2><p>If this is your first time discovering my work, start with these community, partnership and program case studies.</p><div className="highlight-list">{caseStudies.slice(0, 6).map((study) => <Link key={study.slug} href={`/work/${study.slug}`}><span>CASE STUDY</span><strong>{study.title} — {study.eyebrow}</strong><i /></Link>)}</div></div></section>
+    <section className="reference-programs section-shell"><div className="reference-section-title"><h2>PROGRAMS<br />&amp; EVENTS</h2><p>Strategy becomes real<br />in the field.</p></div><div className="programs-grid"><div className="programs-image"><Image src="/placeholders/workshop.svg" alt="Temporary program photograph placeholder" fill sizes="(max-width: 760px) 100vw, 46vw" /></div><div className="programs-copy"><p>I work across technology events, developer programs, career initiatives, workshops and community gatherings—building the operating structure that helps the right people participate.</p><p>The goal is not an event that looks busy for one day. It is a useful experience with a clear path toward learning, building, access, partnerships or future contribution.</p></div><Link className="programs-cta" href="/work-with-me">Want to build a program<br />or activate a community?<span /><ArrowUpRight /></Link></div><div className="future-programs"><h3>Future programs<br />and engagements</h3><p>Planning a technology program, community activation, partnership or event? <Link href="/contact">Get in touch.</Link></p></div></section>
+  </main>;
 }
