@@ -50,6 +50,75 @@ export function RevealText({ children, className = "" }: { children: string; cla
   return <h1 ref={ref} className={className}>{children}</h1>;
 }
 
+export function ScrollFocusTitle({ lines, className = "" }: { lines: string[]; className?: string }) {
+  const ref = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(() => {
+    if (!ref.current) return;
+    const titleLines = gsap.utils.toArray<HTMLElement>(".reference-title-line", ref.current);
+
+    if (reduced()) {
+      gsap.set(titleLines, { color: "#30302d" });
+      return;
+    }
+
+    const tweens = titleLines.slice(1).map((line) => gsap.to(line, {
+      color: "#30302d",
+      duration: 0.55,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: line,
+        start: "top 8%",
+        once: true,
+      },
+    }));
+
+    return () => {
+      tweens.forEach((tween) => {
+        tween.scrollTrigger?.kill();
+        tween.kill();
+      });
+    };
+  }, { scope: ref });
+
+  return <h1 ref={ref} className={className}>{lines.map((line) => <span className="reference-title-line" key={line}>{line}</span>)}</h1>;
+}
+
+export function FooterNameReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    if (!ref.current) return;
+    const letters = gsap.utils.toArray<HTMLElement>(".footer-name-letter", ref.current);
+
+    if (reduced()) {
+      gsap.set(letters, { color: "#fff" });
+      return;
+    }
+
+    const tween = gsap.to(letters, {
+      color: "#fff",
+      duration: 0.28,
+      stagger: 0.16,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ref.current,
+        start: "top 84%",
+        once: true,
+      },
+    });
+
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, { scope: ref });
+
+  const word = (value: string) => value.split("").map((letter, index) => <i className="footer-name-letter" aria-hidden="true" key={`${letter}-${index}`}>{letter}</i>);
+
+  return <div ref={ref} className="footer-name" aria-label="Adam Bello"><span>{word("ADAM")}</span>{" "}<strong>{word("BELLO")}</strong></div>;
+}
+
 export function Counter({ to, suffix }: { to: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   useGSAP(() => {

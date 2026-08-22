@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root { --ink:#15150f; --paper:#f3f0e8; --paper-2:#e8e4da; --acid:#d9f45c; --muted:#6f6d63; --line:rgba(21,21,15,.18); --pad:clamp(1.25rem,4vw,4.5rem); }
+:root { --ink:#15150f; --paper:#f3f0e8; --paper-2:#e8e4da; --primary:#16794f; --acid:#d9f45c; --muted:#6f6d63; --line:rgba(21,21,15,.18); --pad:clamp(1.25rem,4vw,4.5rem); }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:1.5; }
@@ -240,13 +240,13 @@ button { font:inherit; }
 .wordmark span { display:none; }
 .desktop-nav { position:absolute; left:50%; transform:translateX(-50%); gap:0; white-space:nowrap; font-size:.66rem; }
 .nav-item { display:flex; align-items:center; }
-.nav-item i { margin:0 .8rem; color:#ff4b18; font-size:1rem; font-style:normal; }
+.nav-item i { margin:0 .8rem; color:var(--primary); font-size:1rem; font-style:normal; }
 .menu-button { display:flex; align-items:center; gap:.5rem; border:0; background:none; color:inherit; text-transform:uppercase; font-size:.65rem; }
 .menu-button svg { display:none; width:17px; }
 .reference-home { background:#f6f4ee; }
 .reference-hero { padding-top:76px; }
 .scroll-prompt { display:flex; align-items:center; gap:.55rem; margin:1.7rem 0 3.8rem; font-size:.72rem; }
-.scroll-prompt span { width:8px; height:8px; border-radius:50%; background:#ff4b18; }
+.scroll-prompt span { width:8px; height:8px; border-radius:50%; background:var(--primary); }
 .reference-title { margin:0; font-family:Impact, "Arial Narrow", "Helvetica Neue Condensed", sans-serif; font-size:clamp(4.4rem,9.7vw,11rem); line-height:.79; font-weight:400; letter-spacing:-.035em; text-transform:uppercase; }
 .reference-title span { display:block; color:#d8d8d8; }
 .reference-title span:first-child { color:#30302d; }
@@ -254,7 +254,7 @@ button { font:inherit; }
 .reference-copy { max-width:390px; font-size:clamp(1.05rem,1.25vw,1.2rem); }
 .reference-copy p { margin:0 0 1.2rem; }
 .reference-link { display:inline-flex; align-items:center; gap:.45rem; margin-top:1rem; border-bottom:1px solid; }
-.reference-link svg { width:14px; color:#ff4b18; }
+.reference-link svg { width:14px; color:var(--primary); }
 .reference-portrait { position:relative; min-height:min(62vw,760px); background:#ddd; overflow:hidden; }
 .reference-portrait img { object-fit:cover; filter:grayscale(1); }
 .reference-portrait > span { position:absolute; right:1rem; bottom:1rem; padding:.35rem .55rem; background:#f6f4ee; font-size:.58rem; text-transform:uppercase; letter-spacing:.12em; }
@@ -274,7 +274,7 @@ button { font:inherit; }
 .reference-testimonial.plum { background:#784c62; color:white; }
 .reference-testimonial.blue { background:#d1d9e3; }
 .testimonial-person { display:grid; grid-template-columns:45px 1fr 40px; gap:.7rem; align-items:center; padding-bottom:1rem; border-bottom:1px solid currentColor; border-color:rgba(0,0,0,.08); }
-.avatar-placeholder { display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:#ff4b18; color:white; font-size:.65rem; font-weight:700; }
+.avatar-placeholder { display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:var(--primary); color:white; font-size:.65rem; font-weight:700; }
 .testimonial-person strong, .testimonial-person small { display:block; }
 .testimonial-person strong { font-size:.9rem; }
 .testimonial-person small { font-size:.55rem; text-transform:uppercase; }
@@ -292,7 +292,7 @@ button { font:inherit; }
 .highlight-list a { position:relative; display:grid; grid-template-columns:1fr 20px; gap:.8rem; padding:1.15rem 0; border-bottom:1px dotted #aaa; }
 .highlight-list span { grid-column:1; justify-self:start; border:1px solid; border-radius:99px; padding:.12rem .45rem; font-size:.54rem; line-height:1; }
 .highlight-list strong { grid-column:1; font-size:.85rem; font-weight:400; }
-.highlight-list i { grid-column:2; grid-row:1/3; align-self:center; width:10px; height:10px; border-radius:50%; background:#ff4b18; transition:transform .2s; }
+.highlight-list i { grid-column:2; grid-row:1/3; align-self:center; width:10px; height:10px; border-radius:50%; background:var(--primary); transition:transform .2s; }
 .highlight-list a:hover i { transform:scale(1.5); }
 
 .reference-programs { padding-bottom:clamp(9rem,15vw,16rem); }
@@ -302,7 +302,7 @@ button { font:inherit; }
 .programs-copy { font-size:.9rem; }
 .programs-copy p { margin:0 0 1.4rem; }
 .programs-cta { display:flex; flex-direction:column; align-items:center; text-align:center; gap:1.2rem; padding:1.5rem; background:#f5dcd0; font-size:.83rem; text-decoration:underline; }
-.programs-cta span { width:12px; height:12px; border-radius:50%; background:#ff4b18; }
+.programs-cta span { width:12px; height:12px; border-radius:50%; background:var(--primary); }
 .programs-cta svg { display:none; }
 .future-programs { width:65%; margin:10rem auto 0; }
 .future-programs h3 { margin:0 0 1rem; font-size:clamp(2rem,3vw,3rem); line-height:1; font-weight:400; }
@@ -318,7 +318,8 @@ button { font:inherit; }
 .footer-links div { display:flex; flex-direction:column; align-items:flex-start; }
 .footer-links a { margin-bottom:.5rem; text-decoration:none; }
 .footer-name { overflow:hidden; margin:4rem 0 1rem; white-space:nowrap; font-family:Impact, "Arial Narrow", sans-serif; font-size:clamp(6rem,15vw,17rem); line-height:.8; font-weight:400; letter-spacing:-.04em; color:#252525; }
-.footer-name strong { color:#efeee9; font-weight:400; }
+.footer-name strong { font-weight:400; }
+.footer-name-letter { display:inline-block; color:#252525; font-style:normal; }
 
 @media (min-width: 1001px) {
   .site-nav .menu-button { display:flex; }
