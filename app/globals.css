@@ -283,7 +283,7 @@ button { font:inherit; }
 .testimonial-proof { position:relative; width:100%; aspect-ratio:2.4/1; margin-top:1.5rem; overflow:hidden; background:#151515; }
 .testimonial-proof img { object-fit:contain; }
 
-.reference-highlights { display:grid; grid-template-columns:minmax(250px,.58fr) minmax(0,1.2fr); gap:clamp(3rem,11vw,11rem); align-items:start; padding-bottom:clamp(11rem,19vw,20rem); }
+.reference-highlights { display:grid; grid-template-columns:minmax(250px,.58fr) minmax(0,1.2fr); gap:clamp(3rem,11vw,11rem); align-items:start; margin-bottom:clamp(11rem,19vw,20rem); }
 .highlight-image { position:relative; min-height:620px; }
 .highlight-image img, .programs-image img { object-fit:cover; }
 .highlight-copy h2 { margin-bottom:2rem; }
@@ -320,7 +320,29 @@ button { font:inherit; }
 .footer-name { overflow:hidden; margin:4rem 0 1rem; white-space:nowrap; font-family:Impact, "Arial Narrow", sans-serif; font-size:clamp(6rem,15vw,17rem); line-height:.8; font-weight:400; letter-spacing:-.04em; color:#252525; }
 .footer-name strong { color:#efeee9; font-weight:400; }
 
-@media (min-width: 1001px) { .site-nav .menu-button { display:flex; } }
+@media (min-width: 1001px) {
+  .site-nav .menu-button { display:flex; }
+
+  .reference-intro > *,
+  .reference-highlights > *,
+  .programs-grid > *,
+  .about-layout > * {
+    position:sticky;
+    top:clamp(5rem,8vh,7rem);
+    align-self:start;
+  }
+
+  .about-portrait {
+    min-height:0;
+    height:min(760px,calc(100svh - 8rem));
+  }
+
+  .highlight-image,
+  .programs-image {
+    min-height:0;
+    height:min(620px,calc(100svh - 8rem));
+  }
+}
 @media (max-width: 1000px) {
   .desktop-nav { display:none; }
   .menu-button svg { display:block; }
