@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Reveal } from "@/components/motion";
+import { Reveal, ScrollFocusTitle } from "@/components/motion";
 import { caseStudies } from "@/lib/content";
 
 const testimonialPlaceholders = [
@@ -15,7 +15,7 @@ export default function Home() {
   return <main className="reference-home">
     <section className="reference-hero section-shell">
       <p className="scroll-prompt"><span /> Keep Scrolling :)</p>
-      <h1 className="reference-title"><span>ECOSYSTEM &amp; COMMUNITY OPERATOR,</span><span>PARTNERSHIPS BUILDER,</span><span>PROGRAM STRATEGIST</span></h1>
+      <ScrollFocusTitle className="reference-title" lines={["ECOSYSTEM & COMMUNITY OPERATOR,", "PARTNERSHIPS BUILDER,", "PROGRAM STRATEGIST"]} />
       <div className="reference-intro"><div className="reference-copy"><p>I build the systems around communities, programs, events and partnerships that help organizations reach people, create meaningful participation and turn participation into opportunity.</p><p>My work sits at the intersection of community, partnerships, events and technology. I move between strategy and delivery—mapping ecosystems, coordinating stakeholders, troubleshooting constraints and getting the work into the real world.</p><p>How a person goes from discovering a community → finding a reason to participate → gaining useful access or skills → returning to contribute and lead, is the system I care about.</p><Link className="reference-link" href="/work">Explore selected work <ArrowUpRight /></Link></div><div className="reference-portrait"><Image src="/Personal pictures_/Close out .jpg" alt="Portrait of Adam Bello" fill priority sizes="(max-width: 760px) 100vw, 60vw" /></div></div>
     </section>
     <section className="reference-testimonials section-shell"><div className="reference-section-title"><h2>TESTIMONIALS</h2><p>What people I&apos;ve worked<br />with say about me</p></div><div className="testimonial-lead"><p>Credibility is strongest when it comes from the people closest to the work. This section is intentionally structured now and will only publish testimonials that are verified and approved.</p></div><div className="testimonial-stack">{testimonialPlaceholders.map((item, index) => <Reveal key={item.name} className={`reference-testimonial ${item.tone} card-${index + 1}`}><div className="testimonial-person"><span className="avatar-placeholder">AB</span><div><strong>{item.name}</strong><small>{item.role}</small></div><b>“</b></div><p>{item.copy}</p>{item.image && <div className="testimonial-proof"><Image src={item.image} alt="Google for Developers feedback for Adam Bello" fill sizes="(max-width: 760px) 90vw, 46vw" /></div>}</Reveal>)}</div></section>
