@@ -251,7 +251,7 @@ button { font:inherit; }
 .reference-title span { display:block; color:#d8d8d8; }
 .reference-title span:first-child { color:#30302d; }
 .reference-intro { display:grid; grid-template-columns:minmax(260px,.58fr) minmax(0,1.42fr); gap:clamp(3rem,8vw,8rem); align-items:start; margin-top:clamp(4.5rem,8vw,8rem); }
-.reference-copy { max-width:390px; font-size:.9rem; }
+.reference-copy { max-width:390px; font-size:clamp(1.05rem,1.25vw,1.2rem); }
 .reference-copy p { margin:0 0 1.2rem; }
 .reference-link { display:inline-flex; align-items:center; gap:.45rem; margin-top:1rem; border-bottom:1px solid; }
 .reference-link svg { width:14px; color:#ff4b18; }
@@ -280,6 +280,8 @@ button { font:inherit; }
 .testimonial-person small { font-size:.55rem; text-transform:uppercase; }
 .testimonial-person b { font-family:Georgia,serif; font-size:2.4rem; text-align:right; }
 .reference-testimonial > p { margin:1.8rem 0 0; font-size:clamp(1.2rem,2.1vw,2rem); line-height:1.35; }
+.testimonial-proof { position:relative; width:100%; aspect-ratio:2.4/1; margin-top:1.5rem; overflow:hidden; background:#151515; }
+.testimonial-proof img { object-fit:contain; }
 
 .reference-highlights { display:grid; grid-template-columns:minmax(250px,.58fr) minmax(0,1.2fr); gap:clamp(3rem,11vw,11rem); align-items:start; padding-bottom:clamp(11rem,19vw,20rem); }
 .highlight-image { position:relative; min-height:620px; }
