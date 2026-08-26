@@ -167,12 +167,6 @@ export const metrics = [
   [15, "+", "Technology and community programs"],
 ];
 
-export const fieldNotes = [
-  { slug: "builder-mindset", date: "Field note 01", title: "A builder's mindset is a program decision", summary: "How an observation becomes a change in program design, activation and participant outcomes." },
-  { slug: "events-to-ecosystems", date: "Field note 02", title: "An event ends. An ecosystem continues.", summary: "Designing the pathways that help participants return, contribute and lead." },
-  { slug: "local-trust", date: "Field note 03", title: "Local trust is operating infrastructure", summary: "Why regional activation depends on relationships long before it depends on reach." },
-];
-
 export const services = [
   "Ecosystem and community strategy",
   "Developer and community programs",
