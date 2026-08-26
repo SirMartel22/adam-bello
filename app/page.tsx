@@ -82,10 +82,22 @@ export default function Home() {
 
       <HighlightsSection />
 
-      <section className="reference-programs section-shell">
-        <div className="reference-section-title"><h2>PROGRAMS<br />&amp; EVENTS</h2><p>Strategy becomes real<br />in the field.</p></div>
-        <div className="programs-grid"><div className="programs-image"><Image src="/Build with AI_/IMG_7245.JPEG" alt="Participants working during a Build with AI program" fill sizes="(max-width: 760px) 100vw, 46vw" /></div><div className="programs-copy"><p>I work across technology events, developer programs, career initiatives, workshops and community gatherings—building the operating structure that helps the right people participate.</p><p>The goal is not an event that looks busy for one day. It is a useful experience with a clear path toward learning, building, access, partnerships or future contribution.</p></div><Link className="programs-cta" href="/work-with-me">Want to build a program<br />or activate a community?<span /><ArrowUpRight /></Link></div>
-        <div className="future-programs"><h3>Future programs<br />and engagements</h3><p>Planning a technology program, community activation, partnership or event? <Link href="/contact">Get in touch.</Link></p></div>
+      <section className="reference-programs">
+        <div className="programs-feature">
+          <Image className="programs-feature__background" src="/Personal pictures_/ADB.jpg" alt="Adam Bello at a community program" fill sizes="100vw" />
+          <div className="programs-feature__content section-shell">
+            <div className="reference-section-title"><h2>PROGRAMS<br />&amp; EVENTS</h2><p>Strategy becomes real<br />in the field.</p></div>
+            <div className="programs-grid">
+              <div className="programs-copy"><p>I work across technology events, developer programs, career initiatives, workshops and community gatherings. I build the structure that helps the right people take part.</p><p>The goal is not an event that looks busy for one day. It is a useful experience with a clear path toward learning, building, access, partnerships or future contribution.</p></div>
+              <Link className="programs-cta" href="/work-with-me">Want to build a program<br />or activate a community?<span /><ArrowUpRight /></Link>
+            </div>
+          </div>
+        </div>
+        <div className="future-programs section-shell">
+          <p className="kicker">Future programs and engagements</p>
+          <h3>Planning a technology program, community activation, partnership or event?</h3>
+          <Link href="/contact">Get in touch</Link>
+        </div>
       </section>
     </main>
   );
