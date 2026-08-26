@@ -23,23 +23,31 @@ export function HighlightsSection() {
     const media = gsap.matchMedia();
     media.add("(min-width: 761px) and (prefers-reduced-motion: no-preference)", () => {
       const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-      const tween = gsap.to(track, {
-        x: () => -distance(),
-        ease: "none",
+      const leadIn = () => Math.min(window.innerHeight * 0.3, 260);
+      const updateSectionHeight = () => {
+        section.style.setProperty("--highlight-scroll-distance", `${distance() + leadIn()}px`);
+      };
+      updateSectionHeight();
+      gsap.set(track, { x: 0 });
+
+      const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          end: () => `+=${distance()}`,
+          end: () => `+=${distance() + leadIn()}`,
           scrub: 0.8,
-          pin: true,
-          anticipatePin: 1,
           invalidateOnRefresh: true,
+          onRefreshInit: updateSectionHeight,
         },
       });
+      timeline
+        .to({}, { duration: 0.14 })
+        .to(track, { x: () => -distance(), ease: "none", duration: 1 });
 
       return () => {
-        tween.scrollTrigger?.kill();
-        tween.kill();
+        timeline.scrollTrigger?.kill();
+        timeline.kill();
+        section.style.removeProperty("--highlight-scroll-distance");
       };
     });
 
@@ -48,45 +56,39 @@ export function HighlightsSection() {
 
   return (
     <section id="work" ref={sectionRef} className="horizontal-highlights">
-      <header className="horizontal-highlights__header">
-        <p>Selected case studies</p>
-        <h2>HIGHLIGHTS</h2>
-        <span>Scroll to explore</span>
-      </header>
+      <div className="horizontal-highlights__sticky">
+        <header className="horizontal-highlights__header">
+          <p>Selected case studies</p>
+          <h2>HIGHLIGHTS</h2>
+          <span>Scroll to explore</span>
+        </header>
 
-      <div ref={viewportRef} className="horizontal-highlights__viewport">
-        <div ref={trackRef} className="horizontal-highlights__track">
-          {caseStudies.slice(0, 6).map((study, index) => (
-            <Link
-              key={study.slug}
-              href={`/work/${study.slug}`}
-              className="highlight-card"
-              style={{ "--card-accent": study.accent } as CSSProperties}
-            >
-              <div className="highlight-card__top">
-                <span>0{index + 1}</span>
-                <span>Case study</span>
-                <ArrowUpRight />
-              </div>
-              <div className="highlight-card__media">
-                <Image
-                  src={study.image}
-                  alt={`${study.title} case study`}
-                  fill
-                  sizes="(max-width: 760px) 84vw, 46vw"
-                />
-              </div>
-              <div className="highlight-card__body">
-                <p>{study.eyebrow}</p>
-                <h3>{study.title}</h3>
-                <p>{study.summary}</p>
-              </div>
-              <div className="highlight-card__metric">
-                <strong>{study.metric}</strong>
-                <span>{study.metricLabel}</span>
-              </div>
-            </Link>
-          ))}
+        <div ref={viewportRef} className="horizontal-highlights__viewport">
+          <div ref={trackRef} className="horizontal-highlights__track">
+            {caseStudies.slice(0, 6).map((study, index) => (
+              <Link
+                key={study.slug}
+                href={`/work/${study.slug}`}
+                className="highlight-card"
+                style={{ "--card-accent": study.accent } as CSSProperties}
+              >
+                <div className="highlight-card__top">
+                  <span>0{index + 1}</span>
+                  <span>Case study</span>
+                  <ArrowUpRight />
+                </div>
+                <div className="highlight-card__media">
+                  <Image src={study.image} alt={`${study.title} case study`} fill sizes="(max-width: 760px) 84vw, 46vw" />
+                </div>
+                <div className="highlight-card__body">
+                  <p>{study.eyebrow}</p><h3>{study.title}</h3><p>{study.summary}</p>
+                </div>
+                <div className="highlight-card__metric">
+                  <strong>{study.metric}</strong><span>{study.metricLabel}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
