@@ -48,6 +48,7 @@ export function SiteNav() {
             {open ? <X /> : <Menu />}
           </button>
         </div>
+        <p className="availability-badge"><span aria-hidden="true" /> Available for work</p>
       </header>
 
       {open && (
