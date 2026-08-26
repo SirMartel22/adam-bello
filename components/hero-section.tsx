@@ -33,7 +33,7 @@ export function HeroSection() {
         </Link>
       </div>
 
-      <p className="editorial-hero__name" aria-hidden="true">Adam Bello</p>
+      <p className="editorial-hero__name" aria-hidden="true">ADAM BELLO</p>
     </section>
   );
 }
