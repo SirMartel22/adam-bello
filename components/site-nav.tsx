@@ -48,11 +48,6 @@ export function SiteNav() {
             {open ? <X /> : <Menu />}
           </button>
         </div>
-
-        <div className="capsule-actions" aria-hidden={!scrolled}>
-          <Link href="/work" className="capsule-action capsule-action--dark">Selected work</Link>
-          <Link href="/contact" className="capsule-action capsule-action--accent">Get in touch</Link>
-        </div>
       </header>
 
       {open && (
