@@ -6,6 +6,7 @@ export function HeroSection() {
   return (
     <section className="editorial-hero" aria-labelledby="hero-title">
       <div className="editorial-hero__glow" aria-hidden="true" />
+      <p className="availability-badge"><span aria-hidden="true" /> Available for work</p>
       <div className="editorial-hero__portrait" aria-hidden="true">
         <Image
           src="/Personal pictures_/Close out .jpg"
@@ -17,7 +18,6 @@ export function HeroSection() {
       </div>
 
       <div className="editorial-hero__left">
-        <p className="availability-badge"><span aria-hidden="true" /> Available for work</p>
         <h1 id="hero-title">
           Community Builder &amp;<br />Partnerships Lead<br />based in Nigeria
         </h1>

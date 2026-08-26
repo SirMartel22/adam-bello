@@ -23,9 +23,8 @@ export function HighlightsSection() {
     const media = gsap.matchMedia();
     media.add("(min-width: 761px) and (prefers-reduced-motion: no-preference)", () => {
       const distance = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
-      const leadIn = () => Math.min(window.innerHeight * 0.3, 260);
       const updateSectionHeight = () => {
-        section.style.setProperty("--highlight-scroll-distance", `${distance() + leadIn()}px`);
+        section.style.setProperty("--highlight-scroll-distance", `${distance()}px`);
       };
       updateSectionHeight();
       gsap.set(track, { x: 0 });
@@ -34,21 +33,26 @@ export function HighlightsSection() {
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          end: () => `+=${distance() + leadIn()}`,
+          end: () => `+=${distance()}`,
           scrub: 0.8,
           invalidateOnRefresh: true,
           onRefreshInit: updateSectionHeight,
         },
       });
-      timeline
-        .to({}, { duration: 0.14 })
-        .to(track, { x: () => -distance(), ease: "none", duration: 1 });
+      timeline.to(track, { x: () => -distance(), ease: "none" });
 
       return () => {
         timeline.scrollTrigger?.kill();
         timeline.kill();
         section.style.removeProperty("--highlight-scroll-distance");
       };
+    });
+
+    media.add("(max-width: 760px)", () => {
+      section.style.removeProperty("--highlight-scroll-distance");
+      gsap.set(track, { clearProps: "transform" });
+
+      return () => section.style.removeProperty("--highlight-scroll-distance");
     });
 
     return () => media.revert();
