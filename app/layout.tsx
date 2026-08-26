@@ -5,7 +5,7 @@ import { SmoothScroll } from "@/components/motion";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: "Adam Bello — Ecosystem & Community Operator", template: "%s — Adam Bello" },
+  title: { default: "Adam Bello | Community Builder & Partnerships Lead", template: "%s | Adam Bello" },
   description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
   keywords: ["Adam Bello", "community operations", "developer programs", "ecosystem strategy", "partnerships", "events"],
 };

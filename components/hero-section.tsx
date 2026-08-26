@@ -19,14 +19,14 @@ export function HeroSection() {
       <div className="editorial-hero__left">
         <p className="availability-badge"><span aria-hidden="true" /> Available for work</p>
         <h1 id="hero-title">
-          Ecosystem &amp;<br />Community Operator<br />based in Nigeria
+          Community Builder &amp;<br />Partnerships Lead<br />based in Nigeria
         </h1>
       </div>
 
       <div className="editorial-hero__right">
         <p>
-          Hi, I&apos;m Adam Bello — I build communities, partnerships and
-          programs that turn participation into meaningful opportunity.
+          Hi, I&apos;m Adam Bello. I bring communities, partners and programs
+          together to create opportunities that matter.
         </p>
         <Link className="editorial-hero__cta" href="/work">
           <span aria-hidden="true"><ArrowRight /></span> See my work

@@ -26,7 +26,7 @@ export const caseStudies: CaseStudy[] = [
     positioning: "Turning a campus community into a repeatable developer-learning ecosystem.",
     metric: "7,000+",
     metricLabel: "community members, grown from approximately 1,000",
-    role: "Community and program operator",
+    role: "Community and program lead",
     timeframe: "University of Ilorin",
     image: "/Gdgoc_/Gdgoc.JPEG",
     accent: "#d9f45c",
