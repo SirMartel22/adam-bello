@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
     pullQuote: "You're exceeding all expectations, Adam—including ours!",
     fullRecommendation: "Thank you for putting in the work to make this #DevFest Students Edition a success.",
     initials: "G",
-    proof: "/Testimonials/Testimonials .jpg",
+    proof: "/Testimonials/Testimonials.jpg",
   },
 ];
 
