@@ -19,9 +19,9 @@ export function HeroSection() {
         <p className="editorial-hero__eyebrow">Product &amp; Programs Management</p>
         <h1 id="hero-title">Turning high-level vision into executable results.</h1>
         <p>
-          I&apos;m Adam Bello, and I turn big-picture &ldquo;what ifs&rdquo; into
-          &ldquo;what&apos;s next.&rdquo; I work at the intersection of technology,
-          strategy, and operations—building the systems that help teams scale,
+          I&apos;m  <strong style={{fontSize: "20px"}}> ADAM BELLO </strong>, and I turn big-picture <strong>WHAT IFs </strong> into 
+          <strong> WHAT&apos;s NEXT.  </strong> I work at the intersection of technology,
+          strategy, and operations, building the systems that help teams scale,
           align cross-functionally, and turn users into long-term advocates.
         </p>
         <Link className="editorial-hero__cta" href="#work">
