@@ -1,38 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function HeroSection() {
   return (
     <section className="editorial-hero" aria-labelledby="hero-title">
-      <div className="editorial-hero__glow" aria-hidden="true" />
-      <div className="editorial-hero__portrait" aria-hidden="true">
+      <div className="editorial-hero__portrait">
         <Image
           src="/Personal pictures_/Close out .jpg"
-          alt=""
+          alt="Adam Bello"
           fill
           priority
-          sizes="(max-width: 760px) 100vw, 58vw"
+          sizes="(max-width: 760px) 100vw, 48vw"
         />
       </div>
 
-      <div className="editorial-hero__left">
-        <h1 id="hero-title">
-          Community Builder &amp;<br />Partnerships Lead<br />based in Nigeria
-        </h1>
-      </div>
-
-      <div className="editorial-hero__right">
+      <div className="editorial-hero__content">
+        <p className="editorial-hero__eyebrow">Product &amp; Programs Management</p>
+        <h1 id="hero-title">Turning high-level vision into executable results.</h1>
         <p>
-          Hi, I&apos;m Adam Bello. I bring communities, partners and programs
-          together to create opportunities that matter.
+          I&apos;m Adam Bello, and I turn big-picture &ldquo;what ifs&rdquo; into
+          &ldquo;what&apos;s next.&rdquo; I work at the intersection of technology,
+          strategy, and operations—building the systems that help teams scale,
+          align cross-functionally, and turn users into long-term advocates.
         </p>
-        <Link className="editorial-hero__cta" href="/work">
-          <span aria-hidden="true"><ArrowRight /></span> See my work
+        <Link className="editorial-hero__cta" href="#work">
+          Explore case studies <ArrowUpRight aria-hidden="true" />
         </Link>
       </div>
-
-      <p className="editorial-hero__name" aria-hidden="true">ADAM BELLO</p>
     </section>
   );
 }
