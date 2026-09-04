@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { HeroSection } from "@/components/hero-section";
 import { HighlightsSection } from "@/components/highlights-section";
 import { Reveal } from "@/components/motion";
@@ -62,6 +62,36 @@ export default function Home() {
     <main className="reference-home">
       <HeroSection />
 
+      <section className="what-i-do section-shell" aria-labelledby="what-i-do-title">
+        <div className="what-i-do__intro">
+          <h2 id="what-i-do-title">I help technology companies and developer platforms translate user ecosystems into active product adoption.</h2>
+        </div>
+        <div className="what-i-do__body">
+          <div className="what-i-do__label"><p>What I do</p><ArrowDownRight aria-hidden="true" /></div>
+          <ul>
+            <li><h3>Product &amp; Programs Management</h3><p>Creating the programs, processes, and operating rhythms that move products from strategy into consistent delivery.</p></li>
+            <li><h3>Strategy &amp; Operations</h3><p>Turning complex priorities into focused plans, clear workflows, and measurable outcomes for the team.</p></li>
+            <li><h3>Ecosystem Scaling &amp; Technology Adoption</h3><p>Designing pathways that help communities discover, understand, and adopt technology with confidence.</p></li>
+            <li><h3>Cross-Functional Team Leadership</h3><p>Aligning people, partners, and teams around shared goals so execution stays connected from start to finish.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <HighlightsSection />
+
+      <section className="reference-programs">
+        <div className="programs-feature">
+          <Image className="programs-feature__background" src="/Personal pictures_/ADB.jpg" alt="Adam Bello at a community program" fill sizes="100vw" />
+          <div className="programs-feature__content section-shell">
+            <div className="reference-section-title"><h2>EXECUTABLE<br />RESULTS</h2><p>Program management for<br />technology adoption.</p></div>
+            <div className="programs-grid">
+              <div className="programs-copy"><p>Translating strategy into measurable technology adoption and ecosystem growth.</p><p>I build the operational structure that helps teams move from a clear vision to useful, measurable execution.</p></div>
+              <Link className="programs-cta" href="/work-with-me">Build a program<br />that delivers<span /><ArrowUpRight /></Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="reference-testimonials section-shell">
         <div className="reference-section-title"><h2>TESTIMONIALS</h2><p>What people I&apos;ve worked<br />with say about me</p></div>
         <div className="testimonial-lead"><p>Third-party perspectives on Adam&apos;s leadership, resourcefulness, communication and ability to turn ideas into meaningful action.</p></div>
@@ -80,23 +110,15 @@ export default function Home() {
         </div>
       </section>
 
-      <HighlightsSection />
-
       <section className="reference-programs">
-        <div className="programs-feature">
-          <Image className="programs-feature__background" src="/Personal pictures_/ADB.jpg" alt="Adam Bello at a community program" fill sizes="100vw" />
-          <div className="programs-feature__content section-shell">
-            <div className="reference-section-title"><h2>PROGRAMS<br />&amp; EVENTS</h2><p>Strategy becomes real<br />in the field.</p></div>
-            <div className="programs-grid">
-              <div className="programs-copy"><p>I work across technology events, developer programs, career initiatives, workshops and community gatherings. I build the structure that helps the right people take part.</p><p>The goal is not an event that looks busy for one day. It is a useful experience with a clear path toward learning, building, access, partnerships or future contribution.</p></div>
-              <Link className="programs-cta" href="/work-with-me">Want to build a program<br />or activate a community?<span /><ArrowUpRight /></Link>
-            </div>
-          </div>
-        </div>
         <div className="future-programs section-shell">
-          <p className="kicker">Future programs and engagements</p>
-          <h3>Planning a technology program, community activation, partnership or event?</h3>
-          <Link href="/contact">Get in touch</Link>
+          <p className="kicker">Ready to execute?</p>
+          <h3>Planning a technology program, product launch, or ecosystem activation? Let&apos;s talk strategy and operations.</h3>
+          <div className="future-programs__links">
+            <a href="https://calendly.com/adamoluwatomi555/30min" target="_blank" rel="noreferrer">Book a 30-minute call</a>
+            <a href="mailto:adamoluwatomi555@gmail.com">adamoluwatomi555@gmail.com</a>
+            <a href="https://linkedin.com/in/adam-bello-b80b60238" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
         </div>
       </section>
     </main>
