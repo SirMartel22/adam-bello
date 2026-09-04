@@ -110,15 +110,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="reference-programs">
-        <div className="future-programs section-shell">
-          <p className="kicker">Ready to execute?</p>
-          <h3>Planning a technology program, product launch, or ecosystem activation? Let&apos;s talk strategy and operations.</h3>
-          <div className="future-programs__links">
-            <a href="https://calendly.com/adamoluwatomi555/30min" target="_blank" rel="noreferrer">Book a 30-minute call</a>
-            <a href="mailto:adamoluwatomi555@gmail.com">adamoluwatomi555@gmail.com</a>
-            <a href="https://linkedin.com/in/adam-bello-b80b60238" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
+      <section className="future-programs section-shell">
+        <p className="kicker">Ready to execute?</p>
+        <h3>Planning a technology program, product launch, or ecosystem activation? Let&apos;s talk strategy and operations.</h3>
+        <div className="future-programs__links">
+          <a href="https://calendly.com/adamoluwatomi555/30min" target="_blank" rel="noreferrer">Book a 30-minute call</a>
+          <a href="mailto:adamoluwatomi555@gmail.com">adamoluwatomi555@gmail.com</a>
+          <a href="https://linkedin.com/in/adam-bello-b80b60238" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
       </section>
     </main>
