@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { EvidenceGallery } from "@/components/evidence-gallery";
+import { ScrollLargeText, ScrollRevealBlock } from "@/components/homepage-scroll-motion";
 import { caseStudies } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -42,8 +43,8 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         <div className="case-hero-bottom">
           <div className="case-title">
             <p className="kicker">{study.eyebrow}</p>
-            <h1>{study.title}</h1>
-            <p>{study.positioning}</p>
+            <ScrollLargeText as="h1">{study.title}</ScrollLargeText>
+            <ScrollRevealBlock index={1}><p>{study.positioning}</p></ScrollRevealBlock>
           </div>
 
           <div className="case-facts">
@@ -55,12 +56,12 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
       </section>
 
       <article className="case-body section-shell">
-        <div className="case-lead"><p className="kicker">The overview</p><h2>{study.summary}</h2></div>
-        {study.ownershipNote && <aside className="ownership-note"><span>Role clarity</span><p>{study.ownershipNote}</p></aside>}
+        <ScrollRevealBlock className="case-lead"><p className="kicker">The overview</p><ScrollLargeText as="h2">{study.summary}</ScrollLargeText></ScrollRevealBlock>
+        {study.ownershipNote && <ScrollRevealBlock className="ownership-note" index={1}><span>Role clarity</span><p>{study.ownershipNote}</p></ScrollRevealBlock>}
         <div className="case-columns">
-          <section><p className="kicker">The challenge</p><h3>What needed to change</h3><p>{study.challenge}</p></section>
-          <section><p className="kicker">The approach</p><h3>How the work moved</h3><ul>{study.approach.map((item) => <li key={item}>{item}</li>)}</ul></section>
-          <section><p className="kicker">The outcome</p><h3>What changed</h3><p>{study.outcome}</p></section>
+          <ScrollRevealBlock index={0}><section><p className="kicker">The challenge</p><h3>What needed to change</h3><p>{study.challenge}</p></section></ScrollRevealBlock>
+          <ScrollRevealBlock index={1}><section><p className="kicker">The approach</p><h3>How the work moved</h3><ul>{study.approach.map((item) => <li key={item}>{item}</li>)}</ul></section></ScrollRevealBlock>
+          <ScrollRevealBlock index={2}><section><p className="kicker">The outcome</p><h3>What changed</h3><p>{study.outcome}</p></section></ScrollRevealBlock>
         </div>
         <section className="gallery-section">
           <div className="section-head split-head"><div><p className="kicker">Evidence gallery</p><h2>The work, in the field.</h2></div><p>Selected program photography and supporting evidence.</p></div>
