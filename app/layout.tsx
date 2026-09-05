@@ -30,9 +30,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adam Bello | Community Builder & Partnerships Lead",
     description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
+    url: "/",
+    siteName: "Adam Bello",
+    locale: "en_US",
     images: [
       {
-        url: "/placeholders/og-hero.PNG",
+        url: "/placeholders/og-hero.PNG?v=2",
         alt: "Adam Bello portfolio",
         width: 1900,
         height: 774,
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Adam Bello | Community Builder & Partnerships Lead",
     description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
-    images: [{ url: "/placeholders/og-hero.PNG", alt: "Adam Bello portfolio" }],
+    images: [{ url: "/placeholders/og-hero.PNG?v=2", alt: "Adam Bello portfolio" }],
   },
 };
 
