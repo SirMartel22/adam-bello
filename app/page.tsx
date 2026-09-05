@@ -71,7 +71,7 @@ export default function Home() {
           <ul>
             <li><h3>Product &amp; Programs Management</h3><p>Creating the programs, processes, and operating rhythms that move products from strategy into consistent delivery.</p></li>
             <li><h3>Strategy &amp; Operations</h3><p>Turning complex priorities into focused plans, clear workflows, and measurable outcomes for the team.</p></li>
-            <li><h3>Ecosystem Scaling &amp; Technology Adoption</h3><p>Designing pathways that help communities discover, understand, and adopt technology with confidence.</p></li>
+            <li><h3>Community Building and Ecosystem Growth</h3><p>Designing pathways that help communities discover, understand, and adopt technology with confidence.</p></li>
             <li><h3>Cross-Functional Team Leadership</h3><p>Aligning people, partners, and teams around shared goals so execution stays connected from start to finish.</p></li>
           </ul>
         </div>

@@ -23,9 +23,33 @@ const serif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://adam-bello.vercel.app"),
   title: { default: "Adam Bello | Community Builder & Partnerships Lead", template: "%s | Adam Bello" },
   description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
   keywords: ["Adam Bello", "community operations", "developer programs", "ecosystem strategy", "partnerships", "events"],
+  icons: {
+    icon: [{ url: "/placeholders/adam-favicon.PNG", type: "image/png" }],
+    apple: [{ url: "/placeholders/adam-favicon.PNG", type: "image/png" }],
+  },
+  openGraph: {
+    title: "Adam Bello | Community Builder & Partnerships Lead",
+    description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
+    images: [
+      {
+        url: "/placeholders/og-hero.PNG",
+        alt: "Adam Bello portfolio",
+        width: 1900,
+        height: 774,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Adam Bello | Community Builder & Partnerships Lead",
+    description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
+    images: [{ url: "/placeholders/og-hero.PNG", alt: "Adam Bello portfolio" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
