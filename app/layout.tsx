@@ -27,10 +27,6 @@ export const metadata: Metadata = {
   title: { default: "Adam Bello | Community Builder & Partnerships Lead", template: "%s | Adam Bello" },
   description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
   keywords: ["Adam Bello", "community operations", "developer programs", "ecosystem strategy", "partnerships", "events"],
-  icons: {
-    icon: [{ url: "/placeholders/adam-favicon.PNG", type: "image/png" }],
-    apple: [{ url: "/placeholders/adam-favicon.PNG", type: "image/png" }],
-  },
   openGraph: {
     title: "Adam Bello | Community Builder & Partnerships Lead",
     description: "Adam Bello builds the systems that turn communities, events and partnerships into real opportunities.",
