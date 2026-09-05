@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { HeroSection } from "@/components/hero-section";
 import { HighlightsSection } from "@/components/highlights-section";
-import { Reveal } from "@/components/motion";
+import { ExecutableResults, ScrollLargeText, ScrollNavigationDots, ScrollServiceCard, ScrollTestimonial } from "@/components/homepage-scroll-motion";
 
 type Testimonial = {
   name: string;
@@ -61,43 +60,33 @@ export default function Home() {
   return (
     <main className="reference-home">
       <HeroSection />
+      <ScrollNavigationDots />
 
-      <section className="what-i-do section-shell" aria-labelledby="what-i-do-title">
+      <section id="what-i-do" className="what-i-do section-shell" aria-labelledby="what-i-do-title">
         <div className="what-i-do__intro">
-          <h2 id="what-i-do-title">I help technology companies and developer platforms translate user ecosystems into active product adoption.</h2>
+          <ScrollLargeText id="what-i-do-title" as="h2" className="scroll-large-text">I help technology companies and developer platforms translate user ecosystems into active product adoption.</ScrollLargeText>
         </div>
         <div className="what-i-do__body">
           <div className="what-i-do__label"><p>What I do</p><ArrowDownRight aria-hidden="true" /></div>
           <ul>
-            <li><h3>Product &amp; Programs Management</h3><p>Creating the programs, processes, and operating rhythms that move products from strategy into consistent delivery.</p></li>
-            <li><h3>Strategy &amp; Operations</h3><p>Turning complex priorities into focused plans, clear workflows, and measurable outcomes for the team.</p></li>
-            <li><h3>Community Building and Ecosystem Growth</h3><p>Designing pathways that help communities discover, understand, and adopt technology with confidence.</p></li>
-            <li><h3>Cross-Functional Team Leadership</h3><p>Aligning people, partners, and teams around shared goals so execution stays connected from start to finish.</p></li>
+            <ScrollServiceCard index={0} title="Product & Programs Management" description="Creating the programs, processes, and operating rhythms that move products from strategy into consistent delivery." />
+            <ScrollServiceCard index={1} title="Strategy & Operations" description="Turning complex priorities into focused plans, clear workflows, and measurable outcomes for the team." />
+            <ScrollServiceCard index={2} title="Community Building and Ecosystem Growth" description="Designing pathways that help communities discover, understand, and adopt technology with confidence." />
+            <ScrollServiceCard index={3} title="Cross-Functional Team Leadership" description="Aligning people, partners, and teams around shared goals so execution stays connected from start to finish." />
           </ul>
         </div>
       </section>
 
       <HighlightsSection />
 
-      <section className="reference-programs">
-        <div className="programs-feature">
-          <Image className="programs-feature__background" src="/Personal pictures_/ADB.jpg" alt="Adam Bello at a community program" fill sizes="100vw" />
-          <div className="programs-feature__content section-shell">
-            <div className="reference-section-title"><h2>EXECUTABLE<br />RESULTS</h2><p>Program management for<br />technology adoption.</p></div>
-            <div className="programs-grid">
-              <div className="programs-copy"><p>Translating strategy into measurable technology adoption and ecosystem growth.</p><p>I build the operational structure that helps teams move from a clear vision to useful, measurable execution.</p></div>
-              <Link className="programs-cta" href="/work-with-me">Build a program<br />that delivers<span /><ArrowUpRight /></Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ExecutableResults />
 
-      <section className="reference-testimonials section-shell">
+      <section id="testimonials" className="reference-testimonials section-shell">
         <div className="reference-section-title"><h2>TESTIMONIALS</h2><p>What people I&apos;ve worked<br />with say about me</p></div>
         <div className="testimonial-lead"><p>Third-party perspectives on Adam&apos;s leadership, resourcefulness, communication and ability to turn ideas into meaningful action.</p></div>
         <div className="testimonial-stack">
           {testimonials.map((item, index) => (
-            <Reveal key={item.name} className={`reference-testimonial ${item.tone} card-${index + 1}`}>
+            <ScrollTestimonial key={item.name} index={index} className={`card-${index + 1} ${item.tone}`}>
               <div className="testimonial-person">
                 {item.portrait ? <span className="testimonial-avatar"><Image src={item.portrait} alt={`Portrait of ${item.name}`} fill sizes="45px" /></span> : <span className="avatar-placeholder" aria-hidden="true">{item.initials}</span>}
                 <div><strong>{item.name}</strong><small>{item.role}</small><small className="testimonial-source">{item.source}</small></div><b>&ldquo;</b>
@@ -105,14 +94,14 @@ export default function Home() {
               <p>{item.pullQuote}</p>
               <details className="testimonial-full"><summary>Read full recommendation</summary><p>{item.fullRecommendation}</p></details>
               {item.proof && <div className="testimonial-proof"><Image src={item.proof} alt="Google for Developers praising Adam Bello's work on DevFest Students Edition" fill sizes="(max-width: 760px) 90vw, 46vw" /></div>}
-            </Reveal>
+            </ScrollTestimonial>
           ))}
         </div>
       </section>
 
       <section className="future-programs section-shell">
         <p className="kicker">Ready to execute?</p>
-        <h3>Planning a technology program, product launch, or ecosystem activation? Let&apos;s talk strategy and operations.</h3>
+        <ScrollLargeText as="h3" className="scroll-large-text">Planning a technology program, product launch, or ecosystem activation? Let&apos;s talk strategy and operations.</ScrollLargeText>
         <div className="future-programs__links">
           <a href="https://calendly.com/adamoluwatomi555/30min" target="_blank" rel="noreferrer">Book a 30-minute call</a>
           <a href="mailto:adamoluwatomi555@gmail.com">adamoluwatomi555@gmail.com</a>

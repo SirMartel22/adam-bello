@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, type PointerEvent, type ReactNode } from "react";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
 import SplitType from "split-type";
@@ -115,8 +116,19 @@ export function FooterNameReveal() {
   }, { scope: ref });
 
   const word = (value: string) => value.split("").map((letter, index) => <i className="footer-name-letter" aria-hidden="true" key={`${letter}-${index}`}>{letter}</i>);
+  const movePortrait = (event: PointerEvent<HTMLDivElement>) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 56;
+    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 30;
+    ref.current?.style.setProperty("--footer-portrait-x", `${x}px`);
+    ref.current?.style.setProperty("--footer-portrait-y", `${y}px`);
+  };
+  const resetPortrait = () => {
+    ref.current?.style.setProperty("--footer-portrait-x", "0px");
+    ref.current?.style.setProperty("--footer-portrait-y", "0px");
+  };
 
-  return <div ref={ref} className="footer-name" aria-label="Adam Bello"><span>{word("ADAM")}</span>{" "}<strong>{word("BELLO")}</strong></div>;
+  return <div ref={ref} className="footer-name" aria-label="The Adam Bello" onPointerMove={movePortrait} onPointerLeave={resetPortrait}><span className="footer-name-words"><span>{word("THE")}</span><span>{word("ADAM")}</span><span>{word("BELLO")}</span></span><span className="footer-name-portrait" aria-hidden="true"><Image src="/icon.png" alt="" fill sizes="270px" /></span></div>;
 }
 
 export function Counter({ to, suffix }: { to: number; suffix: string }) {
